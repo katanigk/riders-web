@@ -28,6 +28,15 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* בדף כניסה (רקע כהה) – וידוא שהטקסט נראה גם עם אוטו-מילוי */
+.login-page input:-webkit-autofill,
+.login-page input:-webkit-autofill:hover,
+.login-page input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff;
 }
 
 .content-block {
@@ -45,4 +54,17 @@ a {
 .content-block h2 {
   text-align: right !important;
   display: inline-block;
+}
+
+@keyframes slide-in-from-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.nav-drawer-left {
+  animation: slide-in-from-left 0.25s ease-out forwards;
 }
