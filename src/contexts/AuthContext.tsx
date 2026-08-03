@@ -13,19 +13,26 @@ import { auth, db } from "@/lib/firebase";
 
 export type Role = "guest" | "member" | "club";
 
-interface AuthState {
+interface AuthData {
   user: { uid: string; email: string | null; nickname?: string; photoURL?: string | null } | null;
   role: Role;
   loading: boolean;
+}
+
+interface AuthState extends AuthData {
   profileModalOpen: boolean;
   openProfileModal: () => void;
   closeProfileModal: () => void;
 }
 
-const defaultState: AuthState = {
+const defaultData: AuthData = {
   user: null,
   role: "guest",
   loading: true,
+};
+
+const defaultState: AuthState = {
+  ...defaultData,
   profileModalOpen: false,
   openProfileModal: () => {},
   closeProfileModal: () => {},
@@ -34,7 +41,7 @@ const defaultState: AuthState = {
 const AuthContext = createContext<AuthState>(defaultState);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [state, setState] = useState<AuthState>(defaultState);
+  const [state, setState] = useState<AuthData>(defaultData);
   const [profileModalOpen, setProfileModalOpen] = useState(false);
 
   useEffect(() => {
