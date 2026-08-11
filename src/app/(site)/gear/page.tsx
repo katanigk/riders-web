@@ -15,26 +15,28 @@ export default function GearPage() {
       <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
         <nav
           aria-label="מחלקות ציוד"
-          className="flex flex-col items-stretch justify-center gap-4 border-y border-white/20 py-10 sm:flex-row sm:items-center sm:justify-center sm:gap-0 sm:py-14"
+          className="border-y border-white/20 py-12 md:py-16"
         >
-          {departments.map((department, index) => (
-            <div key={department.slug} className="flex items-center sm:contents">
-              {index > 0 && (
-                <span
-                  aria-hidden
-                  className="hidden px-6 text-2xl font-light text-white/35 sm:inline md:px-10 md:text-3xl"
+          <ul className="m-0 flex list-none flex-wrap items-center justify-center p-0">
+            {departments.map((department, index) => (
+              <li key={department.slug} className="flex items-center">
+                {index > 0 && (
+                  <span
+                    aria-hidden
+                    className="mx-5 text-xl text-white/40 md:mx-8 md:text-2xl"
+                  >
+                    •
+                  </span>
+                )}
+                <Link
+                  href={`/gear/${department.slug}`}
+                  className="whitespace-nowrap text-2xl font-medium text-white transition-colors hover:text-[var(--primary)] md:text-3xl lg:text-4xl"
                 >
-                  |
-                </span>
-              )}
-              <Link
-                href={`/gear/${department.slug}`}
-                className="text-center text-3xl font-bold text-[#EEEEEE] transition-colors hover:text-[var(--primary)] md:text-4xl lg:text-5xl"
-              >
-                {department.title}
-              </Link>
-            </div>
-          ))}
+                  {department.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </nav>
       </div>
     </main>
