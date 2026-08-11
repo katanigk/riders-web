@@ -17,20 +17,20 @@ export default function GearPage() {
           aria-label="מחלקות ציוד"
           className="border-y border-white/20 py-12 md:py-16"
         >
-          <ul className="m-0 flex list-none flex-wrap items-center justify-center p-0">
+          <ul className="m-0 flex list-none flex-wrap items-center justify-center gap-y-4 p-0">
             {departments.map((department, index) => (
               <li key={department.slug} className="flex items-center">
                 {index > 0 && (
                   <span
                     aria-hidden
-                    className="mx-5 text-xl text-white/40 md:mx-8 md:text-2xl"
+                    className="mx-8 text-2xl text-white/40 md:mx-14 md:text-3xl lg:mx-20"
                   >
                     •
                   </span>
                 )}
                 <Link
                   href={`/gear/${department.slug}`}
-                  className="whitespace-nowrap text-2xl font-medium text-white transition-colors hover:text-[var(--primary)] md:text-3xl lg:text-4xl"
+                  className="whitespace-nowrap text-4xl font-medium text-white transition-colors hover:text-[var(--primary)] md:text-5xl lg:text-6xl"
                 >
                   {department.title}
                 </Link>
