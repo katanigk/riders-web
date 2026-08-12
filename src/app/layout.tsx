@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Heebo } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { AuthProvider } from "@/contexts/AuthContext";
 import AffiliateHandler from "@/components/AffiliateHandler";
@@ -10,6 +11,8 @@ const heebo = Heebo({
   subsets: ["latin", "hebrew"],
   weight: ["300", "400", "500", "600", "700"],
 });
+
+const GA_MEASUREMENT_ID = "G-HGK8RYTZVD";
 
 export const metadata: Metadata = {
   title: "RIDERS",
@@ -33,6 +36,18 @@ export default function RootLayout({
         className={`${heebo.variable} font-sans antialiased`}
         suppressHydrationWarning
       >
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
         <AuthProvider>
           <AffiliateHandler />
           {children}
