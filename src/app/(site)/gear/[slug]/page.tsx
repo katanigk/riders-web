@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getGearDepartment, getGearDepartments } from "@/content/gear";
+import GearDepartmentsNav from "@/components/GearDepartmentsNav";
+import {
+  clothingSeasons,
+  getGearDepartment,
+  getGearDepartments,
+} from "@/content/gear";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -23,6 +29,43 @@ export default async function GearDepartmentPage({ params }: Props) {
   const { slug } = await params;
   const department = getGearDepartment(slug);
   if (!department) notFound();
+
+  if (slug === "bigud") {
+    return (
+      <main className="min-h-screen bg-[var(--background)] pt-8 pb-24" dir="rtl">
+        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+          <GearDepartmentsNav activeSlug="bigud" />
+
+          <section
+            aria-label="עונות ביגוד"
+            className="grid grid-cols-1 gap-4 pt-6 md:grid-cols-2 md:gap-6 md:pt-8"
+          >
+            {clothingSeasons.map((season) => (
+              <article
+                key={season.slug}
+                className="group relative overflow-hidden border border-white/15 bg-black"
+              >
+                <div className="relative aspect-[9/16] w-full">
+                  <Image
+                    src={season.image}
+                    alt={season.title}
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    priority
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                  <h2 className="absolute bottom-6 right-6 text-3xl font-medium text-white md:text-4xl">
+                    {season.title}
+                  </h2>
+                </div>
+              </article>
+            ))}
+          </section>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="min-h-screen bg-[var(--background)] pt-8 pb-24" dir="rtl">

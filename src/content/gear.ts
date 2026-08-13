@@ -29,3 +29,22 @@ export function getGearDepartments() {
 export function getGearDepartment(slug: string) {
   return gearDepartments.find((d) => d.slug === slug) ?? null;
 }
+
+export type ClothingSeason = {
+  slug: string;
+  title: string;
+  image: string;
+};
+
+export const clothingSeasons: ClothingSeason[] = [
+  {
+    slug: "kayitz",
+    title: "קיץ",
+    image: "/gear/bigud-kayitz.png",
+  },
+  {
+    slug: "choref",
+    title: "חורף",
+    image: "/gear/bigud-choref.png",
+  },
+];
