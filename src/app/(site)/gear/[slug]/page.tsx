@@ -36,29 +36,36 @@ export default async function GearDepartmentPage({ params }: Props) {
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
           <GearDepartmentsNav activeSlug="bigud" />
 
+          <p className="mx-auto mt-8 max-w-3xl text-center text-base leading-8 text-gray-300 md:mt-10 md:text-lg md:leading-9">
+            ביגוד לשליחי אופניים שעובדים בשטח כל השנה – מהחום של הקיץ ועד הגשם
+            והבוץ של החורף. בחרנו פריטים שנוחים לרכיבה ארוכה, מחזיקים מעמד, ולא
+            מפריעים לעבודה.
+          </p>
+
           <section
             aria-label="עונות ביגוד"
             className="flex justify-center"
-            style={{ gap: "4cm", paddingTop: "calc(2rem + 2cm)" }}
+            style={{ gap: "4cm", paddingTop: "2.5cm" }}
           >
             {clothingSeasons.map((season) => (
               <article
                 key={season.slug}
-                className="group relative w-[42%] max-w-[220px] overflow-hidden border border-white/15 bg-black md:max-w-[260px]"
+                className="flex w-[46%] max-w-[280px] flex-col items-center md:max-w-[340px]"
               >
-                <div className="relative aspect-[9/16] w-full">
-                  <Image
-                    src={season.image}
-                    alt={season.title}
-                    fill
-                    sizes="260px"
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
-                  <h2 className="absolute bottom-4 right-4 text-xl font-medium text-white md:text-2xl">
-                    {season.title}
-                  </h2>
+                <h2 className="mb-4 text-center text-xl font-medium text-white md:mb-5 md:text-2xl">
+                  {season.title}
+                </h2>
+                <div className="group relative w-full overflow-hidden border border-white/15 bg-black">
+                  <div className="relative aspect-[9/16] w-full">
+                    <Image
+                      src={season.image}
+                      alt={season.title}
+                      fill
+                      sizes="340px"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      priority
+                    />
+                  </div>
                 </div>
               </article>
             ))}

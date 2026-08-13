@@ -39,12 +39,12 @@ export type ClothingSeason = {
 export const clothingSeasons: ClothingSeason[] = [
   {
     slug: "kayitz",
-    title: "קיץ",
+    title: "בגדי קיץ",
     image: "/gear/bigud-kayitz-pov.png",
   },
   {
     slug: "choref",
-    title: "חורף",
+    title: "בגדי חורף",
     image: "/gear/bigud-choref-pov.png",
   },
 ];
