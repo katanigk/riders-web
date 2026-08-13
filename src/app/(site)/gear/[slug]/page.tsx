@@ -38,24 +38,24 @@ export default async function GearDepartmentPage({ params }: Props) {
 
           <section
             aria-label="עונות ביגוד"
-            className="grid grid-cols-1 gap-4 pt-6 md:grid-cols-2 md:gap-6 md:pt-8"
+            className="flex justify-center gap-4 pt-8 md:gap-8"
           >
             {clothingSeasons.map((season) => (
               <article
                 key={season.slug}
-                className="group relative overflow-hidden border border-white/15 bg-black"
+                className="group relative w-[42%] max-w-[220px] overflow-hidden border border-white/15 bg-black md:max-w-[260px]"
               >
                 <div className="relative aspect-[9/16] w-full">
                   <Image
                     src={season.image}
                     alt={season.title}
                     fill
-                    sizes="(min-width: 768px) 50vw, 100vw"
+                    sizes="260px"
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                  <h2 className="absolute bottom-6 right-6 text-3xl font-medium text-white md:text-4xl">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent" />
+                  <h2 className="absolute bottom-4 right-4 text-xl font-medium text-white md:text-2xl">
                     {season.title}
                   </h2>
                 </div>
