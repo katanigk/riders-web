@@ -12,7 +12,7 @@ export default function GearDepartmentsNav({
     <nav
       aria-label="מחלקות ציוד"
       className="border-y border-white/20"
-      style={{ paddingBlock: "2.5rem" }}
+      style={{ paddingBlock: "1.25rem" }}
     >
       <ul
         className="m-0 flex list-none flex-wrap items-center justify-center p-0"
@@ -26,9 +26,9 @@ export default function GearDepartmentsNav({
                 <span
                   aria-hidden
                   style={{
-                    marginInline: "clamp(1.25rem, 3.5vw, 3rem)",
+                    marginInline: "clamp(0.85rem, 2.2vw, 1.75rem)",
                     color: "rgba(255,255,255,0.4)",
-                    fontSize: "1.1rem",
+                    fontSize: "0.85rem",
                     lineHeight: 1,
                   }}
                 >
@@ -39,7 +39,7 @@ export default function GearDepartmentsNav({
                 href={`/gear/${department.slug}`}
                 className="whitespace-nowrap font-medium transition-colors hover:text-[var(--primary)]"
                 style={{
-                  fontSize: "clamp(1.5rem, 2.6vw, 2.25rem)",
+                  fontSize: "clamp(1rem, 1.6vw, 1.25rem)",
                   lineHeight: 1.2,
                   color: isActive ? "var(--primary)" : "#ffffff",
                 }}
