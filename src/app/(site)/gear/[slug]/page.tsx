@@ -48,8 +48,9 @@ export default async function GearDepartmentPage({ params }: Props) {
             style={{ gap: "4cm", paddingTop: "2.5cm" }}
           >
             {clothingSeasons.map((season) => (
-              <article
+              <Link
                 key={season.slug}
+                href={`/gear/bigud/${season.slug}`}
                 className="group flex w-[46%] max-w-[280px] flex-col items-center md:max-w-[340px]"
               >
                 <h2 className="mb-4 text-center text-xl font-medium text-white transition-colors group-hover:text-[var(--primary)] md:mb-5 md:text-2xl">
@@ -67,7 +68,7 @@ export default async function GearDepartmentPage({ params }: Props) {
                     />
                   </div>
                 </div>
-              </article>
+              </Link>
             ))}
           </section>
         </div>

@@ -9,6 +9,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/community`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
     { url: `${base}/gear`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/gear/bigud`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/gear/bigud/kayitz`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
+    { url: `${base}/gear/bigud/choref`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/gear/migun`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/gear/tosafot`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     { url: `${base}/training`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
