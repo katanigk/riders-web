@@ -38,7 +38,8 @@ export default async function GearDepartmentPage({ params }: Props) {
 
           <section
             aria-label="עונות ביגוד"
-            className="flex justify-center gap-4 pt-8 md:gap-8"
+            className="flex justify-center"
+            style={{ gap: "4cm", paddingTop: "calc(2rem + 2cm)" }}
           >
             {clothingSeasons.map((season) => (
               <article
