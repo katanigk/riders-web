@@ -40,11 +40,11 @@ export const clothingSeasons: ClothingSeason[] = [
   {
     slug: "kayitz",
     title: "קיץ",
-    image: "/gear/bigud-kayitz.png",
+    image: "/gear/bigud-kayitz-pov.png",
   },
   {
     slug: "choref",
     title: "חורף",
-    image: "/gear/bigud-choref.png",
+    image: "/gear/bigud-choref-pov.png",
   },
 ];
