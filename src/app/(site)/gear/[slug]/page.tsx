@@ -50,12 +50,12 @@ export default async function GearDepartmentPage({ params }: Props) {
             {clothingSeasons.map((season) => (
               <article
                 key={season.slug}
-                className="flex w-[46%] max-w-[280px] flex-col items-center md:max-w-[340px]"
+                className="group flex w-[46%] max-w-[280px] flex-col items-center md:max-w-[340px]"
               >
-                <h2 className="mb-4 text-center text-xl font-medium text-white md:mb-5 md:text-2xl">
+                <h2 className="mb-4 text-center text-xl font-medium text-white transition-colors group-hover:text-[var(--primary)] md:mb-5 md:text-2xl">
                   {season.title}
                 </h2>
-                <div className="group relative w-full overflow-hidden border border-white/15 bg-black">
+                <div className="relative w-full overflow-hidden border border-white/15 bg-black">
                   <div className="relative aspect-[9/16] w-full">
                     <Image
                       src={season.image}
